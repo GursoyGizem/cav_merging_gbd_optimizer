@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connections>
+    <connection from="main_road" to="after_merge" fromLane="0" toLane="0"/>
+    <connection from="main_road" to="after_merge" fromLane="1" toLane="1"/>
+    <connection from="main_road" to="after_merge" fromLane="2" toLane="2"/>
+    <connection from="main_road" to="after_merge" fromLane="3" toLane="3"/>
+    <connection from="on_ramp"   to="after_merge" fromLane="0" toLane="3"/>
+</connections>

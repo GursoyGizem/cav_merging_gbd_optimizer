@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="600.00,80.00" convBoundary="0.00,0.00,1000.00,80.00" origBoundary="-600.00,-80.00,400.00,0.00" projParameter="!"/>
+
+    <edge id=":merge_point_0" function="internal">
+        <lane id=":merge_point_0_0" index="0" speed="27.77" length="24.94" shape="548.55,64.62 551.99,67.32 555.76,71.99 560.89,76.43 568.42,78.40"/>
+    </edge>
+    <edge id=":merge_point_1" function="internal">
+        <lane id=":merge_point_1_0" index="0" speed="33.33" length="20.42" shape="548.00,68.80 568.42,68.80"/>
+        <lane id=":merge_point_1_1" index="1" speed="33.33" length="20.42" shape="548.00,72.00 568.42,72.00"/>
+        <lane id=":merge_point_1_2" index="2" speed="33.33" length="20.42" shape="548.00,75.20 568.42,75.20"/>
+        <lane id=":merge_point_1_3" index="3" speed="33.33" length="20.42" shape="548.00,78.40 568.42,78.40"/>
+    </edge>
+
+    <edge id="after_merge" from="merge_point" to="main_end" priority="2">
+        <lane id="after_merge_0" index="0" speed="33.33" length="431.58" shape="568.42,68.80 1000.00,68.80"/>
+        <lane id="after_merge_1" index="1" speed="33.33" length="431.58" shape="568.42,72.00 1000.00,72.00"/>
+        <lane id="after_merge_2" index="2" speed="33.33" length="431.58" shape="568.42,75.20 1000.00,75.20"/>
+        <lane id="after_merge_3" index="3" speed="33.33" length="431.58" shape="568.42,78.40 1000.00,78.40"/>
+    </edge>
+    <edge id="main_road" from="main_start" to="merge_point" priority="2">
+        <lane id="main_road_0" index="0" speed="33.33" length="548.00" shape="0.00,68.80 548.00,68.80"/>
+        <lane id="main_road_1" index="1" speed="33.33" length="548.00" shape="0.00,72.00 548.00,72.00"/>
+        <lane id="main_road_2" index="2" speed="33.33" length="548.00" shape="0.00,75.20 548.00,75.20"/>
+        <lane id="main_road_3" index="3" speed="33.33" length="548.00" shape="0.00,78.40 548.00,78.40"/>
+    </edge>
+    <edge id="on_ramp" from="ramp_start" to="merge_point" priority="1">
+        <lane id="on_ramp_0" index="0" speed="22.22" length="256.81" shape="300.41,-1.55 548.55,64.62"/>
+    </edge>
+
+    <junction id="main_end" type="dead_end" x="1000.00" y="80.00" incLanes="after_merge_0 after_merge_1 after_merge_2 after_merge_3" intLanes="" shape="1000.00,67.20 1000.00,80.00"/>
+    <junction id="main_start" type="dead_end" x="0.00" y="80.00" incLanes="" intLanes="" shape="0.00,80.00 0.00,67.20"/>
+    <junction id="merge_point" type="priority" x="600.00" y="80.00" incLanes="on_ramp_0 main_road_0 main_road_1 main_road_2 main_road_3" intLanes=":merge_point_0_0 :merge_point_1_0 :merge_point_1_1 :merge_point_1_2 :merge_point_1_3" shape="568.42,80.00 568.42,67.20 564.19,67.07 561.09,66.70 558.56,66.10 556.07,65.29 553.05,64.27 548.96,63.08 548.14,66.17 548.00,67.20 548.00,80.00">
+        <request index="0" response="11110" foes="11110" cont="0"/>
+        <request index="1" response="00000" foes="00001" cont="0"/>
+        <request index="2" response="00000" foes="00001" cont="0"/>
+        <request index="3" response="00000" foes="00001" cont="0"/>
+        <request index="4" response="00000" foes="00001" cont="0"/>
+    </junction>
+    <junction id="ramp_start" type="dead_end" x="300.00" y="0.00" incLanes="" intLanes="" shape="300.00,-0.00 300.82,-3.09"/>
+
+    <connection from="main_road" to="after_merge" fromLane="0" toLane="0" via=":merge_point_1_0" dir="s" state="M"/>
+    <connection from="main_road" to="after_merge" fromLane="1" toLane="1" via=":merge_point_1_1" dir="s" state="M"/>
+    <connection from="main_road" to="after_merge" fromLane="2" toLane="2" via=":merge_point_1_2" dir="s" state="M"/>
+    <connection from="main_road" to="after_merge" fromLane="3" toLane="3" via=":merge_point_1_3" dir="s" state="M"/>
+    <connection from="on_ramp" to="after_merge" fromLane="0" toLane="3" via=":merge_point_0_0" dir="s" state="m"/>
+
+    <connection from=":merge_point_0" to="after_merge" fromLane="0" toLane="3" dir="s" state="M"/>
+    <connection from=":merge_point_1" to="after_merge" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":merge_point_1" to="after_merge" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":merge_point_1" to="after_merge" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":merge_point_1" to="after_merge" fromLane="3" toLane="3" dir="s" state="M"/>
+
+</net>

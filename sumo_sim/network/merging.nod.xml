@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <node id="main_start"  x="-600" y="0"   type="priority"/>
+    <node id="merge_point" x="0"    y="0"   type="priority"/>
+    <node id="main_end"    x="400"  y="0"   type="priority"/>
+    <node id="ramp_start"  x="-300" y="-80" type="priority"/>
+</nodes>

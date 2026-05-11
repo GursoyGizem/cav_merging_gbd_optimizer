@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <vType id="CAV" accel="2.0" decel="4.0" maxSpeed="33.33"
+           length="4.5" minGap="2.0" carFollowModel="IDM"/>
+
+    <route id="main_route" edges="main_road after_merge"/>
+    <route id="ramp_route" edges="on_ramp after_merge"/>
+
+    <vehicle id="inside_1"  type="CAV" route="main_route"
+             depart="0" departLane="0" departPos="630" departSpeed="28.0"/>
+    <vehicle id="inside_2"  type="CAV" route="main_route"
+             depart="0" departLane="1" departPos="590" departSpeed="27.0"/>
+    <vehicle id="outside_1" type="CAV" route="main_route"
+             depart="0" departLane="2" departPos="590" departSpeed="28.0"/>
+    <vehicle id="outside_2" type="CAV" route="main_route"
+             depart="0" departLane="3" departPos="550" departSpeed="27.0"/>
+    <vehicle id="ramp_1"    type="CAV" route="ramp_route"
+             depart="0" departLane="0" departPos="50" departSpeed="26.0"/>
+</routes>

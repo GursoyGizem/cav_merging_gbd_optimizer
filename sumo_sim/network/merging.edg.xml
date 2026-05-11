@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges>
+    <edge id="main_road" from="main_start" to="merge_point"
+          numLanes="4" speed="33.33" priority="2"/>
+
+    <edge id="after_merge" from="merge_point" to="main_end"
+          numLanes="4" speed="33.33" priority="2"/>
+
+    <edge id="on_ramp" from="ramp_start" to="merge_point"
+          numLanes="1" speed="22.22" priority="1"/>
+</edges>
